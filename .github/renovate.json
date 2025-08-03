@@ -11,7 +11,8 @@
         "/^Makefile$/"
       ],
       "matchStrings": [
-        "export TERRAFORM_PROVIDER_VERSION \\?= (?<currentValue>\\d+\\.\\d+\\.\\d+)"
+        "export TERRAFORM_PROVIDER_VERSION \\?= (?<currentValue>\\d+\\.\\d+\\.\\d+)",
+        "export TERRAFORM_NATIVE_PROVIDER_BINARY \\?= terraform-provider-proxmox_v(?<currentValue>\\d+\\.\\d+\\.\\d+)"
       ],
       "datasourceTemplate": "github-releases",
       "packageNameTemplate": "bpg/terraform-provider-proxmox",
