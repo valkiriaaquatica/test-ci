@@ -1,4 +1,4 @@
-name: Run make generate on Renovate PR
+name: Run test commit on Renovate PR
 
 on:
   pull_request:
@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  regenerate:
+  test:
     if: startsWith(github.head_ref, 'renovate/')
     runs-on: ubuntu-latest
 
@@ -17,6 +17,14 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
-      - name: Set up Go
+      - name: Create dummy file
         run: |
-          echo "this is a test"
+          echo "Testing commit by GitHub Actions" > newfile.txt
+
+      - name: Commit and push dummy change
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git diff --cached --quiet || git commit --amend --no-edit
+          git push origin HEAD --force
