@@ -1,0 +1,22 @@
+name: Run make generate on Renovate PR
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - main
+
+jobs:
+  regenerate:
+    if: startsWith(github.head_ref, 'renovate/')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Set up Go
+        run: |
+          echo "this is a test"
