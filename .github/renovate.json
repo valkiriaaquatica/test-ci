@@ -4,9 +4,12 @@
     "github>bpg/renovate-config",
     ":semanticCommitTypeAll(chore)"
   ],
-  "regexManagers": [
+  "customManagers": [
     {
-      "fileMatch": ["^Makefile$"],
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/^Makefile$/"
+      ],
       "matchStrings": [
         "export TERRAFORM_PROVIDER_VERSION \\?= (?<currentValue>\\d+\\.\\d+\\.\\d+)"
       ],
@@ -17,11 +20,15 @@
   ],
   "packageRules": [
     {
-      "matchPackageNames": ["bpg/terraform-provider-proxmox"],
+      "matchPackageNames": [
+        "bpg/terraform-provider-proxmox"
+      ],
       "semanticCommitScope": "deps"
     },
     {
-      "matchManagers": ["regex"],
+      "matchManagers": [
+        "custom.regex"
+      ],
       "automerge": false,
       "semanticCommitScope": "deps"
     }
