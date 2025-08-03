@@ -1,1 +1,1 @@
-FROM ubuntu:18.04
+FROM alpine:3.20.3
