@@ -22,3 +22,25 @@ jobs:
         run: |
           git config user.name "renovate-ci[bot]"
           git config user.email "renovate-ci@users.noreply.github.com"
+      
+      - name: Make a random file
+        run: |
+          touch random-file.txt
+
+      - name: Create new branch and PR if needed
+        if: steps.check_diff.outputs.no_changes == 'false'
+        run: |
+          NEW_BRANCH="renovate/${GITHUB_HEAD_REF#renovate/}-generated"
+          git checkout -b "$NEW_BRANCH"
+          git add .
+          git commit -m "ci: generate files after renovate update"
+          git push origin "$NEW_BRANCH"
+
+          gh pr create \
+            --base "${GITHUB_HEAD_REF}" \
+            --head "$NEW_BRANCH" \
+            --title "ci: generate files after renovate update" \
+            --body "Auto-generated files from make generate after Renovate update" \
+            --repo "${{ github.repository }}"
+        env:
+          GH_TOKEN: ${{ secrets.GH_RENOVATE_WRITER_TOKEN }}
