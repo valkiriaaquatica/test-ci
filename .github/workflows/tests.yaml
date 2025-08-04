@@ -47,6 +47,12 @@ jobs:
         run: |
           make generate
 
+      - name: Check if changes were generated
+        id: check_diff
+        run: |
+          git status
+          git diff --quiet && echo "no_changes=true" >> $GITHUB_OUTPUT || echo "no_changes=false" >> $GITHUB_OUTPUT
+
       - name: Create new branch and PR if needed
         if: steps.check_diff.outputs.no_changes == 'false'
         run: |
