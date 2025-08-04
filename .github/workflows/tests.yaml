@@ -18,6 +18,10 @@ jobs:
           ref: ${{ github.head_ref }}
           token: ${{ secrets.GH_RENOVATE_WRITER_TOKEN }}
 
+      - name: Debug the version
+        run: |
+          cat Makefile
+
       - name: Set up Git
         run: |
           git config user.name "renovate-ci[bot]"
