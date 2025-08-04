@@ -1,0 +1,15 @@
+/.cache
+/.work
+/_output
+cover.out
+/vendor
+/.vendor-new
+.DS_Store
+
+# ignore IDE folders
+.vscode/
+.idea/
+/terraform-tests
+
+# local provider development
+cluster/images/provider-proxmox-bpg/tempo_image/
