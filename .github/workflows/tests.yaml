@@ -22,10 +22,25 @@ jobs:
         run: |
           git config user.name "renovate-ci[bot]"
           git config user.email "renovate-ci@users.noreply.github.com"
-      
-      - name: Make a random file
+
+      - name: Set up Go 1.21
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.21"
+
+      - name: First make generate (may fail)
         run: |
-          
+          echo "Running initial make generate (will fail if prerequisites missing)"
+          make generate >/dev/null 2>&1 || true
+      
+      - name: Run script fixies docs
+        run: |
+          chmod +x ./pre-make-generate.sh
+          ./pre-make-generate.sh
+
+      - name:   Second make generate
+        run: |
+          make generate
 
       - name: Create new branch and PR if needed
         if: steps.check_diff.outputs.no_changes == 'false'
