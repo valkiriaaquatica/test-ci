@@ -40,7 +40,17 @@ jobs:
             --base "${GITHUB_HEAD_REF}" \
             --head "$NEW_BRANCH" \
             --title "ci: generate files after renovate update" \
-            --body "Auto-generated files from make generate after Renovate update" \
+            --body "This pull request was auto-generated after a Renovate update to regenerate files using \`make generate\`.
+
+          ⚠️ **Important**: This PR depends on the original Renovate PR \`${GITHUB_HEAD_REF}\`.  
+          It should only be merged after (or together with) the corresponding Renovate update.
+
+          Changes were generated automatically based on the version bump of \`bpg/terraform-provider-proxmox\`.
+
+          ---
+
+          _This PR was created by a CI workflow to keep generated files up to date._" \
             --repo "${{ github.repository }}"
+
         env:
           GH_TOKEN: ${{ secrets.GH_RENOVATE_WRITER_TOKEN }}
