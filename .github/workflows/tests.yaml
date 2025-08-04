@@ -28,7 +28,7 @@ jobs:
           touch random-file.txt
 
       - name: Create new branch and PR if needed
-        if: steps.check_diff.outputs.no_changes == 'false'
+       #  if: steps.check_diff.outputs.no_changes == 'false'
         run: |
           NEW_BRANCH="renovate/${GITHUB_HEAD_REF#renovate/}-generated"
           git checkout -b "$NEW_BRANCH"
