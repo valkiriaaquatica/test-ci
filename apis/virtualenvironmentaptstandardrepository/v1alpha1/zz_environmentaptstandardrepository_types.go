@@ -15,7 +15,7 @@ import (
 
 type EnvironmentAptStandardRepositoryInitParameters struct {
 
-	// quincy-enterprise | ceph-quincy-no-subscription | ceph-quincy-test | ceph-reef-enterprise | ceph-reef-no-subscription | ceph-reef-test | enterprise | no-subscription | test.
+	// quincy-enterprise | ceph-quincy-no-subscription | ceph-quincy-test | ceph-reef-enterprise | ceph-reef-no-subscription | ceph-reef-test | ceph-squid-enterprise | ceph-squid-no-subscription | ceph-squid-test | enterprise | no-subscription | test.
 	// The handle of the APT standard repository. Must be `ceph-quincy-enterprise` | `ceph-quincy-no-subscription` | `ceph-quincy-test` | `ceph-reef-enterprise` | `ceph-reef-no-subscription` | `ceph-reef-test` | `enterprise` | `no-subscription` | `test`.
 	Handle *string `json:"handle,omitempty" tf:"handle,omitempty"`
 
@@ -34,7 +34,7 @@ type EnvironmentAptStandardRepositoryObservation struct {
 	// The absolute path of the source list file that contains this standard repository.
 	FilePath *string `json:"filePath,omitempty" tf:"file_path,omitempty"`
 
-	// quincy-enterprise | ceph-quincy-no-subscription | ceph-quincy-test | ceph-reef-enterprise | ceph-reef-no-subscription | ceph-reef-test | enterprise | no-subscription | test.
+	// quincy-enterprise | ceph-quincy-no-subscription | ceph-quincy-test | ceph-reef-enterprise | ceph-reef-no-subscription | ceph-reef-test | ceph-squid-enterprise | ceph-squid-no-subscription | ceph-squid-test | enterprise | no-subscription | test.
 	// The handle of the APT standard repository. Must be `ceph-quincy-enterprise` | `ceph-quincy-no-subscription` | `ceph-quincy-test` | `ceph-reef-enterprise` | `ceph-reef-no-subscription` | `ceph-reef-test` | `enterprise` | `no-subscription` | `test`.
 	Handle *string `json:"handle,omitempty" tf:"handle,omitempty"`
 
@@ -60,7 +60,7 @@ type EnvironmentAptStandardRepositoryObservation struct {
 
 type EnvironmentAptStandardRepositoryParameters struct {
 
-	// quincy-enterprise | ceph-quincy-no-subscription | ceph-quincy-test | ceph-reef-enterprise | ceph-reef-no-subscription | ceph-reef-test | enterprise | no-subscription | test.
+	// quincy-enterprise | ceph-quincy-no-subscription | ceph-quincy-test | ceph-reef-enterprise | ceph-reef-no-subscription | ceph-reef-test | ceph-squid-enterprise | ceph-squid-no-subscription | ceph-squid-test | enterprise | no-subscription | test.
 	// The handle of the APT standard repository. Must be `ceph-quincy-enterprise` | `ceph-quincy-no-subscription` | `ceph-quincy-test` | `ceph-reef-enterprise` | `ceph-reef-no-subscription` | `ceph-reef-test` | `enterprise` | `no-subscription` | `test`.
 	// +kubebuilder:validation:Optional
 	Handle *string `json:"handle,omitempty" tf:"handle,omitempty"`

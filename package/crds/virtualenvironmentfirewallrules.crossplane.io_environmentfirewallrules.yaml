@@ -180,7 +180,7 @@ spec:
                           type: string
                         type:
                           description: |-
-                            Rule type (in, out).
+                            Rule type (in, out, forward).
                             Rules type ('in', 'out')
                           type: string
                       type: object
@@ -307,7 +307,7 @@ spec:
                           type: string
                         type:
                           description: |-
-                            Rule type (in, out).
+                            Rule type (in, out, forward).
                             Rules type ('in', 'out')
                           type: string
                       type: object
@@ -606,7 +606,7 @@ spec:
                           type: string
                         type:
                           description: |-
-                            Rule type (in, out).
+                            Rule type (in, out, forward).
                             Rules type ('in', 'out')
                           type: string
                       type: object
