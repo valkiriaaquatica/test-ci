@@ -8,7 +8,13 @@ on:
 
 jobs:
   generate-after-renovate:
-    if: startsWith(github.head_ref, 'renovate/')
+    if: |
+      startsWith(github.head_ref, 'renovate/') &&
+      (
+        contains(github.event.pull_request.labels.*.name, 'proxmox') ||
+        contains(github.event.pull_request.labels.*.name, 'bpg') ||
+        contains(github.event.pull_request.labels.*.name, 'provider')
+      )
     runs-on: ubuntu-latest
 
     steps:
