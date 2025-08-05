@@ -1,3 +1,4 @@
+name: "Re run on Pull Request comment"
 on:
   issue_comment:
     types: [created]
