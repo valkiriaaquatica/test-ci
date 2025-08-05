@@ -1,8 +1,15 @@
 frontend:
-  - 'backend/**'
+  - changed-files:
+      - any-glob-to-any-file: ['frontend/**']
+
 backend:
-  - 'docs/**'
+  - changed-files:
+      - any-glob-to-any-file: ['backend/**']
+
 infra:
-  - 'frontend/**'
+  - changed-files:
+      - any-glob-to-any-file: ['infrastructure/**']
+
 docs:
-  - '**/*.md'
+  - changed-files:
+      - any-glob-to-any-file: ['**/*.md']
