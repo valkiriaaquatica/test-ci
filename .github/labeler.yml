@@ -15,3 +15,7 @@ docs:
 readme:
   - changed-files:
       - any-glob-to-any-file: ['**/*.md']
+
+cicd:
+  - changed-files:
+      - any-glob-to-any-file: ['.github/**']
