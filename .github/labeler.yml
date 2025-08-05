@@ -6,10 +6,12 @@ backend:
   - changed-files:
       - any-glob-to-any-file: ['backend/**']
 
-infra:
-  - changed-files:
-      - any-glob-to-any-file: ['infrastructure/**']
-
 docs:
+  - changed-files:
+      - any-glob-to-any-file:
+        - 'docs/**'
+        - 'docs-contributing/**'
+
+readme:
   - changed-files:
       - any-glob-to-any-file: ['**/*.md']
