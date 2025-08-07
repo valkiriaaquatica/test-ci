@@ -1,21 +1,60 @@
-frontend:
+apis:
   - changed-files:
-      - any-glob-to-any-file: ['frontend/**']
+      - any-glob-to-any-file: ['apis/**']
 
-backend:
+cmd:
   - changed-files:
-      - any-glob-to-any-file: ['backend/**']
+      - any-glob-to-any-file: ['cmd/**']
+
+config:
+  - changed-files:
+      - any-glob-to-any-file: ['config/**']
+
+devbox:
+  - changed-files:
+      - any-glob-to-any-file: ['devbox/**']
+
+build:
+  - changed-files:
+      - any-glob-to-any-file: ['build/**']
+
+cluster:
+  - changed-files:
+      - any-glob-to-any-file: ['cluster/**']
+
+examples:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'examples/**'
+          - 'examples-generated/**'
+
+internal:
+  - changed-files:
+      - any-glob-to-any-file: ['internal/**']
+
+scripts:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'scripts/**'
+          - 'pre-make-generate.sh'
+
+tests:
+  - changed-files:
+      - any-glob-to-any-file: ['terraform-tests/**']
 
 docs:
   - changed-files:
       - any-glob-to-any-file:
-        - 'docs/**'
-        - 'docs-contributing/**'
-
-readme:
-  - changed-files:
-      - any-glob-to-any-file: ['**/*.md']
+          - '**/*.md'
 
 cicd:
   - changed-files:
       - any-glob-to-any-file: ['.github/**']
+
+release-notes:
+  - changed-files:
+      - any-glob-to-any-file: ['CHANGELOG.md']
+
+makefile:
+  - changed-files:
+      - any-glob-to-any-file: ['Makefile']
