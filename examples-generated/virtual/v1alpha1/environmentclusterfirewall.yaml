@@ -10,7 +10,7 @@ spec:
   forProvider:
     ebtables: false
     enabled: false
-    forward_policy: ACCEPT
+    forwardPolicy: ACCEPT
     inputPolicy: DROP
     logRatelimit:
     - burst: 10
