@@ -1628,22 +1628,6 @@ spec:
                           type: array
                       type: object
                     type: array
-                  ipv4:
-                    additionalProperties:
-                      type: string
-                    description: |-
-                      The IPv4 configuration.
-                      The container's IPv4 addresses per network device
-                    type: object
-                    x-kubernetes-map-type: granular
-                  ipv6:
-                    additionalProperties:
-                      type: string
-                    description: |-
-                      The IPv4 configuration.
-                      The container's IPv6 addresses per network device
-                    type: object
-                    x-kubernetes-map-type: granular
                   memory:
                     description: |-
                       The memory configuration.
