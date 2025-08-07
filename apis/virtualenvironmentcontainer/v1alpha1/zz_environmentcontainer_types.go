@@ -494,6 +494,16 @@ type EnvironmentContainerObservation struct {
 
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
 
+	// The IPv4 configuration.
+	// The container's IPv4 addresses per network device
+	// +mapType=granular
+	IPv4 map[string]*string `json:"ipv4,omitempty" tf:"ipv4,omitempty"`
+
+	// The IPv4 configuration.
+	// The container's IPv6 addresses per network device
+	// +mapType=granular
+	IPv6 map[string]*string `json:"ipv6,omitempty" tf:"ipv6,omitempty"`
+
 	// The initialization configuration.
 	// The initialization configuration
 	Initialization []InitializationObservation `json:"initialization,omitempty" tf:"initialization,omitempty"`
