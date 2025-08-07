@@ -169,7 +169,7 @@ type RuleInitParameters struct {
 	Sport *string `json:"sport,omitempty" tf:"sport,omitempty"`
 
 	// Rule type (in, out, forward).
-	// Rules type ('in', 'out', 'forward')
+	// Rules type ('in', 'out')
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
 }
 
@@ -250,7 +250,7 @@ type RuleObservation struct {
 	Sport *string `json:"sport,omitempty" tf:"sport,omitempty"`
 
 	// Rule type (in, out, forward).
-	// Rules type ('in', 'out', 'forward')
+	// Rules type ('in', 'out')
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
 }
 
@@ -339,7 +339,7 @@ type RuleParameters struct {
 	Sport *string `json:"sport,omitempty" tf:"sport,omitempty"`
 
 	// Rule type (in, out, forward).
-	// Rules type ('in', 'out', 'forward')
+	// Rules type ('in', 'out')
 	// +kubebuilder:validation:Optional
 	Type *string `json:"type,omitempty" tf:"type,omitempty"`
 }
