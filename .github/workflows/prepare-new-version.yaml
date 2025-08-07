@@ -38,7 +38,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
-          token: ${{ secrets.GH_RENOVATE_WRITER_TOKEN }
+          token: ${{ secrets.GH_RENOVATE_WRITER_TOKEN }}
           fetch-depth: 0
           submodules: true
 
